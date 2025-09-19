@@ -5,10 +5,10 @@ namespace robot
 //    Change these values to tune costmap
 CostmapCore::CostmapCore(const rclcpp::Logger& logger)
 : logger_(logger),
-  resolution_(0.4),  
-  size_(120),      
-  origin_x_(-24.0),  
-  origin_y_(-24.0)   
+  resolution_(0.1),  
+  size_(300),      
+  origin_x_(-15.0),  
+  origin_y_(-15.0)   
 {
     costmap_.resize(size_ * size_, -1); // initialize with unknown (-1)
 }
