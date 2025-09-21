@@ -14,7 +14,7 @@ CostmapCore::CostmapCore(const rclcpp::Logger& logger)
 }
 
     
-//gptd this. make it better later. must finish assignment. lock in.
+//gptd this lowky
 void CostmapCore::processLaserScan(const sensor_msgs::msg::LaserScan::SharedPtr& scan) {
     // Reset map to free for this frame (keep your original behavior)
     std::fill(costmap_.begin(), costmap_.end(), 0);

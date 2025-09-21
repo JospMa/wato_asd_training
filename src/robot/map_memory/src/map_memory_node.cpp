@@ -21,7 +21,7 @@ MapMemoryNode::MapMemoryNode()
       std::chrono::seconds(1),
       [this]() { onTick(); });
 
-  // Will be set once the first odom arrives.
+  // Will be set once the first odom arrives
   odom_latest_ = nullptr;
 }
 
