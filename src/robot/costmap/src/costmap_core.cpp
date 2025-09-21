@@ -19,7 +19,7 @@ void CostmapCore::processLaserScan(const sensor_msgs::msg::LaserScan::SharedPtr&
     // Reset map to free for this frame (keep your original behavior)
     std::fill(costmap_.begin(), costmap_.end(), 0);
 
-    const int stride = 1; // set to 2 or 3 if you need a quick speed-up
+    const int stride = 1; 
 
     // Precompute trig incrementally
     const double angle0 = scan->angle_min;
@@ -78,13 +78,13 @@ void CostmapCore::inflateObstacles() {
     if (resolution_ <= 0.0 || size_ <= 0) return;
 
     // 1 source for inflation radius (meters). Tune later if buns
-    const double inflation_radius_m = 1.3;
+    const double inflation_radius_m = 1.5;
     const int    radius_cells = static_cast<int>(std::floor(inflation_radius_m / resolution_));
     if (radius_cells <= 0) return;
 
     std::vector<int8_t> out = costmap_;
 
-    const double res2      = resolution_ * resolution_;
+    const double res2 = resolution_ * resolution_;
     const double radius2_m = inflation_radius_m * inflation_radius_m;
 
     // For each occupied cell, inflate neighbors within a circle
@@ -108,7 +108,7 @@ void CostmapCore::inflateObstacles() {
 
                     const double d_m  = std::sqrt(d2_m);      
                     const double frac = std::max(0.0, 1.0 - d_m / inflation_radius_m);
-                    const int    cost = static_cast<int>(std::lround(100.0 * frac));
+                    const int cost = static_cast<int>(std::lround(100.0 * frac));
 
                     int8_t &cell = out[ny * size_ + nx];
                     if (cost > cell) cell = static_cast<int8_t>(cost); 

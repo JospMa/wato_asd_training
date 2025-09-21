@@ -1,3 +1,10 @@
-# control_node:
-#   ros__parameters:
-    
+control_node:
+  ros__parameters:
+    path_topic: "/path"                
+    odom_topic: "/odom/filtered"  
+    cmd_vel_topic: "/cmd_vel"        
+
+    lookahead_distance: 1.0        
+    steering_gain: 1.0
+    max_steering_angle: 0.6        
+    linear_velocity: 0.5           

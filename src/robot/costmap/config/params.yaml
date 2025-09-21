@@ -12,7 +12,7 @@ costmap_node:
       orientation: 
         w: 1.0
     
-    inflation_radius: 1.50
+    inflation_radius: 1.5
 
     #these probably fine tweak later if buns
       

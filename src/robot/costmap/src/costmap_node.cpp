@@ -13,7 +13,7 @@ CostmapNode::CostmapNode()
         this->laserCallback(scan);
       });
 
-  costmap_pub_ = this->create_publisher<nav_msgs::msg::OccupancyGrid>("/costmap", 10); // <-- ts op
+  costmap_pub_ = this->create_publisher<nav_msgs::msg::OccupancyGrid>("/costmap", 10);
 }
 
 
